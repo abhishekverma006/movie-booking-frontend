@@ -1,8 +1,7 @@
+import { APP_NAME } from "@/constants/app";
 
 function App() {
-  return (
-    <div>App</div>
-  )
+  return <div>{APP_NAME}</div>;
 }
 
-export default App
+export default App;
