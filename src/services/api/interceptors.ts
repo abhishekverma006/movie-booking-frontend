@@ -14,3 +14,10 @@ export const setupRequestInterceptor = (client: AxiosInstance): void => {
     (error) => Promise.reject(error),
   );
 };
+
+export const setupResponseInterceptor = (client: AxiosInstance): void => {
+  client.interceptors.response.use(
+    (response) => response,
+    (error) => Promise.reject(error),
+  );
+};

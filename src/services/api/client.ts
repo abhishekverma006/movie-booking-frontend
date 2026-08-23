@@ -1,6 +1,9 @@
 import axios from "axios";
 import { env } from "@/config/env";
-import { setupRequestInterceptor } from "./interceptors";
+import {
+  setupRequestInterceptor,
+  setupResponseInterceptor,
+} from "./interceptors";
 
 export const apiClient = axios.create({
   baseURL: env.apiBaseUrl,
@@ -11,3 +14,4 @@ export const apiClient = axios.create({
 });
 
 setupRequestInterceptor(apiClient);
+setupResponseInterceptor(apiClient);
