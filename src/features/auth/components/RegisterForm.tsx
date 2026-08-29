@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { register } from "@/features/auth/api/authApi";
 import {
@@ -226,17 +226,6 @@ export const RegisterForm = () => {
       >
         {isSubmitting ? "Creating account..." : "Create account"}
       </button>
-
-      {/* Login */}
-      <p className="text-center text-sm text-gray-600">
-        Already have an account?{" "}
-        <Link
-          to="/auth/login"
-          className="font-semibold text-gray-900 underline-offset-4 hover:underline"
-        >
-          Sign in
-        </Link>
-      </p>
     </form>
   );
 };
