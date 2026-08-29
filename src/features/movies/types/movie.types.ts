@@ -16,19 +16,26 @@ export interface Movie {
 
 export interface MoviePagination {
   currentPage: number;
-  totalPages: number;
+  pageSize: number;
   totalMovies: number;
-  limit: number;
+  totalPages: number;
+  hasNextPage: boolean;
+  hasPreviousPage: boolean;
 }
 
 export interface GetMoviesResponse {
-  movies: Movie[];
-  pagination: MoviePagination;
+  statusCode: number;
+  success: boolean;
+  message: string;
+  data: {
+    movies: Movie[];
+    pagination: MoviePagination;
+  };
 }
 
 export interface GetMoviesParams {
   page?: number;
-  limit?: number;
+  pageSize?: number;
   search?: string;
   language?: string;
   releaseStatus?: ReleaseStatus;
